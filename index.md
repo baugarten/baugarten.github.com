@@ -6,6 +6,7 @@ tagline:
 {% include JB/setup %}
 <ul class="posts">
 {% for post in site.posts limit: 5 %}
+   <p>
   <div class="post_info">
     <li style="list-style: none">
            <h3 style="display:inline;"> <a href="{{ post.url }}">{{ post.title }}</a></h3>
@@ -13,5 +14,6 @@ tagline:
     </li>
     </br> <em>{{ post.excerpt }} </em>
     </div>
+    </p>
   {% endfor %}
 </ul>

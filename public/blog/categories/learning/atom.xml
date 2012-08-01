@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: learning | Codenfreude]]></title>
-  <link href="http://benaugarten.com/blog/categories/learning/atom.xml" rel="self"/>
-  <link href="http://benaugarten.com/"/>
-  <updated>2012-07-31T21:48:51-07:00</updated>
-  <id>http://benaugarten.com/</id>
+  <link href="http://baugarten.github.com/blog/categories/learning/atom.xml" rel="self"/>
+  <link href="http://baugarten.github.com/"/>
+  <updated>2012-07-31T22:16:21-07:00</updated>
+  <id>http://baugarten.github.com/</id>
   <author>
     <name><![CDATA[Ben Augarten]]></name>
     <email><![CDATA[baugarten@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[the cost of learning]]></title>
-    <link href="http://benaugarten.com/blog/2012/07/31/the-cost-of-learning/"/>
+    <link href="http://baugarten.github.com/blog/2012/07/31/the-cost-of-learning/"/>
     <updated>2012-07-31T21:42:00-07:00</updated>
-    <id>http://benaugarten.com/blog/2012/07/31/the-cost-of-learning</id>
+    <id>http://baugarten.github.com/blog/2012/07/31/the-cost-of-learning</id>
     <content type="html"><![CDATA[<p>It is hard to say when a problem warrants the extra effort of learning a new technology or framework or library. While learning a new technology can dramatically increase productivity, a shotgun approach with no direction can lead to a false sense of accomplishment and stall real progress. At the same time, accepting broken and old technologies can lead to reinventing the wheel or horribly unmaintainable code.</p>
 
 <p>There exists a spectrum in programmers, the extremes being those that learn all the new technology and those that only master a few technologies, ignoring new ones, on which every one of us falls. Either one becomes stuck using outdated tools (I’m a QBASIC pro!) or constantly keeping up with the edge of new technology, all too eager to fall forward into the abyss. Of course there exists a happy medium somewhere along the spectrum, which is sometimes unclear.</p>

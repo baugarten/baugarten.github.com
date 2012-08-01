@@ -65,7 +65,7 @@ github_skip_forks: true
 
 # Twitter
 twitter_user: benaugarten
-twitter_tweet_count: 0
+twitter_tweet_count: 4
 twitter_show_replies: false
 twitter_follow_button: true
 twitter_show_follower_count: false
@@ -86,10 +86,10 @@ pinboard_count: 3
 
 # Delicious
 delicious_user:
-delicious_count: 3
+delicious_count: 3UA-33101711-1
 
 # Disqus Comments
-disqus_short_name: codenfreude
+disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics

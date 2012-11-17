@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: programming-ideology | Codenfreude]]></title>
-  <link href="http://baugarten.github.com/blog/categories/programming-ideology/atom.xml" rel="self"/>
-  <link href="http://baugarten.github.com/"/>
-  <updated>2012-11-17T15:13:11-08:00</updated>
-  <id>http://baugarten.github.com/</id>
+  <title><![CDATA[Category: programming-ideology | Heartbeat]]></title>
+  <link href="http://blog.heartbeat.mc/blog/categories/programming-ideology/atom.xml" rel="self"/>
+  <link href="http://blog.heartbeat.mc/"/>
+  <updated>2012-11-17T15:17:01-08:00</updated>
+  <id>http://blog.heartbeat.mc/</id>
   <author>
     <name><![CDATA[Ben Augarten]]></name>
     <email><![CDATA[baugarten@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[learn to love frustration]]></title>
-    <link href="http://baugarten.github.com/blog/2012/07/08/learn-to-love-frustration/"/>
+    <link href="http://blog.heartbeat.mc/blog/2012/07/08/learn-to-love-frustration/"/>
     <updated>2012-07-08T20:28:00-07:00</updated>
-    <id>http://baugarten.github.com/blog/2012/07/08/learn-to-love-frustration</id>
+    <id>http://blog.heartbeat.mc/blog/2012/07/08/learn-to-love-frustration</id>
     <content type="html"><![CDATA[<p>programming is frustrating. If you disagree, <a href="mailto:baugarten@gmail.com">email me</a>. It should be frustrating, it means it's challenging -- frustration oriented programming transcends language and time. It should be taught and encouraged.</p>
 
 <p>Just the other day I copied a dependency to a new location, changed all the files linking to it, but then edited the old file, confused why the changes weren't being applied, finally realizing my error after thirty painful minutes (I was learning a new configuration language in my defense). Of course, I felt like an idiot, but I already knew I was an idiot so I just kept going. That's the thing, I don't get frustrated by programming, I almost seek the inevitable frustration of learning new languages and libraries and practices -- I learned how to program during high school by myself on a caffeine binge at 4 in the morning on a school night debugging segmentation faults (I realize I sound really cool right now). It was painful. But I learned valuable lessons -- check the most obvious problems first, compartmentalize potential failures, and eventually just use the debugger, it is there for a reason. I'm glad I did it though, because, sure, I didn't know any better and was just messing around, but now it takes a lot to frustrate me, I dare you to try. I own undocumented APIs, null pointers and all things horrible because I've chased much dumber problems and wasted my time doing stupider things.</p>

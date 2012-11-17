@@ -9,6 +9,7 @@ excerpt: programming is frustrating. If you disagree, <a href="mailto:baugarten@
 ---
 
 programming is frustrating. If you disagree, <a href="mailto:baugarten@gmail.com">email me</a>. It should be frustrating, it means it's challenging -- frustration oriented programming transcends language and time. It should be taught and encouraged.
+<!-- more -->
 
 Just the other day I copied a dependency to a new location, changed all the files linking to it, but then edited the old file, confused why the changes weren't being applied, finally realizing my error after thirty painful minutes (I was learning a new configuration language in my defense). Of course, I felt like an idiot, but I already knew I was an idiot so I just kept going. That's the thing, I don't get frustrated by programming, I almost seek the inevitable frustration of learning new languages and libraries and practices -- I learned how to program during high school by myself on a caffeine binge at 4 in the morning on a school night debugging segmentation faults (I realize I sound really cool right now). It was painful. But I learned valuable lessons -- check the most obvious problems first, compartmentalize potential failures, and eventually just use the debugger, it is there for a reason. I'm glad I did it though, because, sure, I didn't know any better and was just messing around, but now it takes a lot to frustrate me, I dare you to try. I own undocumented APIs, null pointers and all things horrible because I've chased much dumber problems and wasted my time doing stupider things. 
 

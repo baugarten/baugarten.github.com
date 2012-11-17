@@ -3,7 +3,7 @@ layout: post
 title: "the cost of learning"
 date: 2012-07-31 21:42
 comments: true
-categories: learning
+published: false
 ---
 It is hard to say when a problem warrants the extra effort of learning a new technology or framework or library. While learning a new technology can dramatically increase productivity, a shotgun approach with no direction can lead to a false sense of accomplishment and stall real progress. At the same time, accepting broken and old technologies can lead to reinventing the wheel or horribly unmaintainable code.
 

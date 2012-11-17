@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Codenfreude]]></title>
-  <link href="http://baugarten.github.com/atom.xml" rel="self"/>
-  <link href="http://baugarten.github.com/"/>
-  <updated>2012-11-17T15:13:11-08:00</updated>
-  <id>http://baugarten.github.com/</id>
+  <title><![CDATA[Heartbeat]]></title>
+  <link href="http://blog.heartbeat.mc/atom.xml" rel="self"/>
+  <link href="http://blog.heartbeat.mc/"/>
+  <updated>2012-11-17T15:17:01-08:00</updated>
+  <id>http://blog.heartbeat.mc/</id>
   <author>
     <name><![CDATA[Ben Augarten]]></name>
     <email><![CDATA[baugarten@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[the cost of learning]]></title>
-    <link href="http://baugarten.github.com/blog/2012/07/31/the-cost-of-learning/"/>
+    <link href="http://blog.heartbeat.mc/blog/2012/07/31/the-cost-of-learning/"/>
     <updated>2012-07-31T21:42:00-07:00</updated>
-    <id>http://baugarten.github.com/blog/2012/07/31/the-cost-of-learning</id>
+    <id>http://blog.heartbeat.mc/blog/2012/07/31/the-cost-of-learning</id>
     <content type="html"><![CDATA[<p>It is hard to say when a problem warrants the extra effort of learning a new technology or framework or library. While learning a new technology can dramatically increase productivity, a shotgun approach with no direction can lead to a false sense of accomplishment and stall real progress. At the same time, accepting broken and old technologies can lead to reinventing the wheel or horribly unmaintainable code.</p>
 
 <p>There exists a spectrum in programmers, the extremes being those that learn all the new technology and those that only master a few technologies, ignoring new ones, on which every one of us falls. Either one becomes stuck using outdated tools (I’m a QBASIC pro!) or constantly keeping up with the edge of new technology, all too eager to fall forward into the abyss. Of course there exists a happy medium somewhere along the spectrum, which is sometimes unclear.</p>
@@ -38,9 +38,9 @@
   
   <entry>
     <title type="html"><![CDATA[learn to love frustration]]></title>
-    <link href="http://baugarten.github.com/blog/2012/07/08/learn-to-love-frustration/"/>
+    <link href="http://blog.heartbeat.mc/blog/2012/07/08/learn-to-love-frustration/"/>
     <updated>2012-07-08T20:28:00-07:00</updated>
-    <id>http://baugarten.github.com/blog/2012/07/08/learn-to-love-frustration</id>
+    <id>http://blog.heartbeat.mc/blog/2012/07/08/learn-to-love-frustration</id>
     <content type="html"><![CDATA[<p>programming is frustrating. If you disagree, <a href="mailto:baugarten@gmail.com">email me</a>. It should be frustrating, it means it&#8217;s challenging &#8211; frustration oriented programming transcends language and time. It should be taught and encouraged.</p>
 
 <p>Just the other day I copied a dependency to a new location, changed all the files linking to it, but then edited the old file, confused why the changes weren&#8217;t being applied, finally realizing my error after thirty painful minutes (I was learning a new configuration language in my defense). Of course, I felt like an idiot, but I already knew I was an idiot so I just kept going. That&#8217;s the thing, I don&#8217;t get frustrated by programming, I almost seek the inevitable frustration of learning new languages and libraries and practices &#8211; I learned how to program during high school by myself on a caffeine binge at 4 in the morning on a school night debugging segmentation faults (I realize I sound really cool right now). It was painful. But I learned valuable lessons &#8211; check the most obvious problems first, compartmentalize potential failures, and eventually just use the debugger, it is there for a reason. I&#8217;m glad I did it though, because, sure, I didn&#8217;t know any better and was just messing around, but now it takes a lot to frustrate me, I dare you to try. I own undocumented APIs, null pointers and all things horrible because I&#8217;ve chased much dumber problems and wasted my time doing stupider things.</p>
@@ -55,9 +55,9 @@
   
   <entry>
     <title type="html"><![CDATA[default behavior]]></title>
-    <link href="http://baugarten.github.com/blog/2012/07/02/default-behavior/"/>
+    <link href="http://blog.heartbeat.mc/blog/2012/07/02/default-behavior/"/>
     <updated>2012-07-02T20:25:00-07:00</updated>
-    <id>http://baugarten.github.com/blog/2012/07/02/default-behavior</id>
+    <id>http://blog.heartbeat.mc/blog/2012/07/02/default-behavior</id>
     <content type="html"><![CDATA[<p>Everyone should publish something they wrote on their own &#8211; their own conception, implementation, and product. It is a completely unique, surreal feeling sending your own brainchild out into the world, seeing people use it and finally tear it to shreds. I recently began an internship (and soon will finish), tirelessly writing code that I&#8217;ll never see again, as a developer or user. I am writing an internal tool, possibly the worst combination of words an undermotivated 19 year old intern could hear. I lazily submit chunks of code, waving goodbye as they disappear into the abyss of &#8216;production.&#8217; I&#8217;ll never look at them again, and I&#8217;m sure no one else will either. Whatever I wrote will forever live in a zombie state, it will never die, on the off chance it bites back, but it will never really live and serve its purpose either (I&#8217;ll leave before its done), much like developers that sell out too early. I understand the need for money, but why settle for a full time, 9-5/6/7/8? job when programmers have a unique opportunity to create nearly anything they want with they own computer? Not many professions have the opportunity to take their craft into their home and make something useful for people everywhere.</p>
 
 <p>I talk mostly to college students and recent grads, but I find that people don&#8217;t often evaluate their work experience and excuse their own lack of independence by citing perks and (sometimes falsly construed) perceptions of monetary necessity. Sure, I get it, there are top chefs and free food and espresso machines and rock walls and there&#8217;s someone that wipes them after they go to the bathroom, but at the end of the day, I&#8217;m sure they are just as unsatisfied as I am, wishing they had the energy to work on something they really care about. I hear about people&#8217;s &#8216;side projects&#8217; all the time but what stops their side projects from taking over their lives? I know I can&#8217;t help but let my side projects take over my life. I try to see past the perks, but the walls of my cubicle sometimes block my view.</p>

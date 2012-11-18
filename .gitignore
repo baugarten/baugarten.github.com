@@ -1,3 +1,5 @@
+.pygments*
+.sass*
 _site/*
 _theme_packages/*
 

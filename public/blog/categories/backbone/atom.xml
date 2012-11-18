@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Backbone | Heartbeat]]></title>
+  <link href="http://blog.heartbeat.mc/blog/categories/backbone/atom.xml" rel="self"/>
+  <link href="http://blog.heartbeat.mc/"/>
+  <updated>2012-11-17T18:42:55-08:00</updated>
+  <id>http://blog.heartbeat.mc/</id>
+  <author>
+    <name><![CDATA[Ben Augarten]]></name>
+    <email><![CDATA[baugarten@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Get Started with requireJS and Backbone]]></title>
+    <link href="http://blog.heartbeat.mc/blog/2012/08/22/get-started-with-requirejs-and-backbone/"/>
+    <updated>2012-08-22T18:32:00-07:00</updated>
+    <id>http://blog.heartbeat.mc/blog/2012/08/22/get-started-with-requirejs-and-backbone</id>
+    <content type="html"><![CDATA[<p>This is something I struggled with for a while -- hopefully you don’t. If you want to learn how to use requireJS and backbone to unuglify your client side code, keep reading. There's plently of documentation on both requireJS and backbone but its easier to learn by example. If you need to be convinced why to use requireJS, you can refer to their <a href='http://requirejs.org/docs/why.html#1'>faq</a>. Short story is that its amazing for organization, code health, and although I haven’t launched anything with it (yet), I’m sure the speed gains are tremendous if used correctly. And why use Backbone? Well, if you're not already using a client side javascript framework, you're probably doing it wrong. If you’re using another, then you can still follow along, this deals much more with requireJS.</p>
+
+<!-- more -->
+
+
+<p>Lets get started with requireJS. One of the main benefits of requireJS is that every dependency of a javascript file is clearly and explicitly stated. There are two main ways to state dependencies. The first is to use a shim config, the second is the wrap all your code in a <code>define</code>, that lists your dependencies. There are advantages to both. The downside and upside to using shim is that everything is located in one file. This is nice for centralization but makes modules less portable. For this reason, I prefer the second when possible because you don’t need to copy the shim config whenever you reuse a file. We’re going to use a little bit of both for extra clarity, indirection, and so you can how to  use them. Before we start, make an html page and instead of adding all your javascript files, just add this one line</p>
+
+<p><code>&lt;script data-main="scripts/main" src="scripts/require.js"&gt;&lt;/script&gt;</code></p>
+
+<p>This loads <code>requireJS</code> and makes the entry point <code>scripts/main.js</code>. Here's our main file.</p>
+
+<p>``` javascript main.js
+require.config({</p>
+
+<pre><code>paths: {
+    'jquery': 'libs/jquery/jquery',
+    'underscore': 'libs/underscore/underscore',
+    'backbone': 'libs/backbone/backbone',
+    'templates': '../templates',
+},
+shim: {
+    'backbone': {
+        deps: ['underscore', 'jquery'],
+    },
+}
+</code></pre>
+
+<p>});</p>
+
+<p>require([</p>
+
+<pre><code>‘app’,
+</code></pre>
+
+<p>], function(App) {</p>
+
+<pre><code>App.initialize();
+</code></pre>
+
+<p>});
+<code>``
+I just threw a lot at you. First, I set up a few rules for requireJS, telling it to look for the alias</code>jquery<code>at libs/jquery/jquery.js (it automatically appends a .js),</code>backbone<code>in libs/backbone/backbone.js, and the same for</code>underscore<code>, and then I set up a templates directory in ../templates. Next, I made a shim configuration, telling requireJS that backbone relies on underscore and jquery to work, so requireJS has to load jquery and underscore before backbone. Next, it loads</code>app.js<code>and calls</code>initialize()`.</p>
+
+<p>Now, I have to be honest, I haven’t told you the whole truth about how its loading these libraries. To add another level of indirection and ensure modular, strict dependency declaration, libs/jquery/jquery.js looks a little more like this</p>
+
+<p><code>javascript libs/jquery/jquery.js
+define([
+   'libs/jquery/jquery-min'
+], function() {
+   return jQuery;
+});
+</code></p>
+
+<p>which loads the correct jquery and then returns it for other modules to use. This way, when we update versions of jquery we don’t have to touch our <code>main.js</code> but instead jquery controls how it loads itself. We do the same for underscore</p>
+
+<p>``` javascript libs/underscore/underscore.js
+define([</p>
+
+<pre><code>'libs/underscore/underscore-min'
+</code></pre>
+
+<p>], function() {</p>
+
+<pre><code>return _;
+</code></pre>
+
+<p>});
+```</p>
+
+<p>Backbone is a little different though because it has dependencies, we use <code>Backbone.noConflict()</code> to export a local reference to Backbone versus introducing it into the global namespace.</p>
+
+<p>``` javascript lib/backbone/backbone.js
+define([</p>
+
+<pre><code>'libs/backbone/backbone-min'
+</code></pre>
+
+<p>], function() {</p>
+
+<pre><code>_.noConflict();
+$.noConflict();
+return Backbone.noConflict();
+</code></pre>
+
+<p>});
+<code>``
+Now that we have all of our dependencies straightened up, lets get back to the whole</code>require(['app'], function(App) { ... });<code>. This is the entry point of our application. It loads</code>app.js<code>and then executes</code>App.initialize()<code>. My</code>app.js` looks like</p>
+
+<p>``` javascript app.js
+define([</p>
+
+<pre><code>'router'
+</code></pre>
+
+<p>], function(Router) {</p>
+
+<pre><code>var initialize = function() {
+    Router.initialize();
+}
+return {
+    initialize: initialize
+};
+</code></pre>
+
+<p>});
+<code>``
+This loads</code>router.js`, my Backbone router and then from the backbone router, I load the necessary components.</p>
+
+<p>``` javascript router.js
+define([</p>
+
+<pre><code>'jquery',
+'underscore',
+'backbone',
+// whatever other dependencies you need
+‘models/mymodel’ // or alias it in main.js
+</code></pre>
+
+<p>], function($, _, Backbone, MyModel) {</p>
+
+<pre><code>var AppRouter = Backbone.Router.extend({
+    // implement your router
+})
+var initialize = function() {
+    var router = new AppRouter;
+    var myModel = new MyModel;
+    // do all the initialization work
+}
+return { initialize: initialize };
+</code></pre>
+
+<p>});
+```</p>
+
+<p>And now your Backbone models look like this:
+``` javascript mymodel.js
+define([</p>
+
+<pre><code>'jquery',
+'backbone',
+</code></pre>
+
+<p>], function ($, Backbone) {</p>
+
+<pre><code>var MyModel= Backbone.Model.extend({
+    // your Backbone model
+});
+return MyModel;
+</code></pre>
+
+<p>});
+```</p>
+
+<p>And now you can add whatever other models, views or collections you want by adding it to <code>main.js</code>. Be sure to wrap it in a <code>define</code> to state all its dependencies and load it asynchronously wherever you want!</p>
+
+<p>I know this has covered a lot, email me if you have any questions.</p>
+
+<p>If you're still down here, you should follow me on <a href="http://twitter.com/benaugarten">twitter</a></p>
+
+<p>Or maybe you have a job offer? Check out my <a href="http://benaugarten.com/hireme/">resume</a> or send me an <a href="mailto:baugarten@gmail.com">email</a>. I'm looking for freelance work.</p>
+]]></content>
+  </entry>
+  
+</feed>

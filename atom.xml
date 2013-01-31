@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Heartbeat]]></title>
-  <link href="http://blog.heartbeat.mc/atom.xml" rel="self"/>
-  <link href="http://blog.heartbeat.mc/"/>
-  <updated>2012-11-17T18:44:15-08:00</updated>
-  <id>http://blog.heartbeat.mc/</id>
+  <title><![CDATA[Codenfreude]]></title>
+  <link href="http://benaugarten.com/atom.xml" rel="self"/>
+  <link href="http://benaugarten.com/"/>
+  <updated>2013-01-30T21:10:44-08:00</updated>
+  <id>http://benaugarten.com/</id>
   <author>
     <name><![CDATA[Ben Augarten]]></name>
     <email><![CDATA[baugarten@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Get Started with requireJS and Backbone]]></title>
-    <link href="http://blog.heartbeat.mc/blog/2012/08/22/get-started-with-requirejs-and-backbone/"/>
+    <link href="http://benaugarten.com/blog/2012/08/22/get-started-with-requirejs-and-backbone/"/>
     <updated>2012-08-22T18:32:00-07:00</updated>
-    <id>http://blog.heartbeat.mc/blog/2012/08/22/get-started-with-requirejs-and-backbone</id>
+    <id>http://benaugarten.com/blog/2012/08/22/get-started-with-requirejs-and-backbone</id>
     <content type="html"><![CDATA[<p>This is something I struggled with for a while &#8211; hopefully you don’t. If you want to learn how to use requireJS and backbone to unuglify your client side code, keep reading. There&#8217;s plently of documentation on both requireJS and backbone but its easier to learn by example. If you need to be convinced why to use requireJS, you can refer to their <a href='http://requirejs.org/docs/why.html#1'>faq</a>. Short story is that its amazing for organization, code health, and although I haven’t launched anything with it (yet), I’m sure the speed gains are tremendous if used correctly. And why use Backbone? Well, if you&#8217;re not already using a client side javascript framework, you&#8217;re probably doing it wrong. If you’re using another, then you can still follow along, this deals much more with requireJS.</p>
 
 <!-- more -->
@@ -220,9 +220,9 @@
   
   <entry>
     <title type="html"><![CDATA[learn to love frustration]]></title>
-    <link href="http://blog.heartbeat.mc/blog/2012/07/08/learn-to-love-frustration/"/>
+    <link href="http://benaugarten.com/blog/2012/07/08/learn-to-love-frustration/"/>
     <updated>2012-07-08T20:28:00-07:00</updated>
-    <id>http://blog.heartbeat.mc/blog/2012/07/08/learn-to-love-frustration</id>
+    <id>http://benaugarten.com/blog/2012/07/08/learn-to-love-frustration</id>
     <content type="html"><![CDATA[<p>programming is frustrating. If you disagree, <a href="mailto:baugarten@gmail.com">email me</a>. It should be frustrating, it means it&#8217;s challenging &#8211; frustration oriented programming transcends language and time. It should be taught and encouraged.</p>
 
 <!-- more -->
@@ -240,9 +240,9 @@
   
   <entry>
     <title type="html"><![CDATA[default behavior]]></title>
-    <link href="http://blog.heartbeat.mc/blog/2012/07/02/default-behavior/"/>
+    <link href="http://benaugarten.com/blog/2012/07/02/default-behavior/"/>
     <updated>2012-07-02T20:25:00-07:00</updated>
-    <id>http://blog.heartbeat.mc/blog/2012/07/02/default-behavior</id>
+    <id>http://benaugarten.com/blog/2012/07/02/default-behavior</id>
     <content type="html"><![CDATA[<p>Everyone should publish something they wrote on their own &#8211; their own conception, implementation, and product. It is a completely unique, surreal feeling sending your own brainchild out into the world, seeing people use it and finally tear it to shreds. I recently began an internship (and soon will finish), tirelessly writing code that I&#8217;ll never see again, as a developer or user. I am writing an internal tool, possibly the worst combination of words an undermotivated 19 year old intern could hear.</p>
 
 <!-- more -->

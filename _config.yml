@@ -2,8 +2,8 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://blog.heartbeat.mc
-title: Heartbeat
+url: http://benaugarten.com
+title: Codenfreude
 subtitle: 
 author: Ben Augarten
 simple_search: http://google.com/search
@@ -58,13 +58,13 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.ht
 # ----------------------- #
 
 # Github repositories
-github_user: #baugarten
-github_repo_count: 0
+github_user: baugarten
+github_repo_count: 4
 github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user: #benaugarten
+twitter_user: benaugarten
 twitter_tweet_count: 0
 twitter_show_replies: false
 twitter_follow_button: true

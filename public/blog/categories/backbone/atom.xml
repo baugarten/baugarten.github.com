@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Backbone | Heartbeat]]></title>
-  <link href="http://blog.heartbeat.mc/blog/categories/backbone/atom.xml" rel="self"/>
-  <link href="http://blog.heartbeat.mc/"/>
-  <updated>2012-11-17T18:42:55-08:00</updated>
-  <id>http://blog.heartbeat.mc/</id>
+  <title><![CDATA[Category: Backbone | Codenfreude]]></title>
+  <link href="http://benaugarten.com/blog/categories/backbone/atom.xml" rel="self"/>
+  <link href="http://benaugarten.com/"/>
+  <updated>2013-01-30T21:10:16-08:00</updated>
+  <id>http://benaugarten.com/</id>
   <author>
     <name><![CDATA[Ben Augarten]]></name>
     <email><![CDATA[baugarten@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Get Started with requireJS and Backbone]]></title>
-    <link href="http://blog.heartbeat.mc/blog/2012/08/22/get-started-with-requirejs-and-backbone/"/>
+    <link href="http://benaugarten.com/blog/2012/08/22/get-started-with-requirejs-and-backbone/"/>
     <updated>2012-08-22T18:32:00-07:00</updated>
-    <id>http://blog.heartbeat.mc/blog/2012/08/22/get-started-with-requirejs-and-backbone</id>
+    <id>http://benaugarten.com/blog/2012/08/22/get-started-with-requirejs-and-backbone</id>
     <content type="html"><![CDATA[<p>This is something I struggled with for a while -- hopefully you don’t. If you want to learn how to use requireJS and backbone to unuglify your client side code, keep reading. There's plently of documentation on both requireJS and backbone but its easier to learn by example. If you need to be convinced why to use requireJS, you can refer to their <a href='http://requirejs.org/docs/why.html#1'>faq</a>. Short story is that its amazing for organization, code health, and although I haven’t launched anything with it (yet), I’m sure the speed gains are tremendous if used correctly. And why use Backbone? Well, if you're not already using a client side javascript framework, you're probably doing it wrong. If you’re using another, then you can still follow along, this deals much more with requireJS.</p>
 
 <!-- more -->

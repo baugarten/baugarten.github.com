@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: independent-development | Heartbeat]]></title>
-  <link href="http://blog.heartbeat.mc/blog/categories/independent-development/atom.xml" rel="self"/>
-  <link href="http://blog.heartbeat.mc/"/>
-  <updated>2012-11-17T18:42:55-08:00</updated>
-  <id>http://blog.heartbeat.mc/</id>
+  <title><![CDATA[Category: independent-development | Codenfreude]]></title>
+  <link href="http://benaugarten.com/blog/categories/independent-development/atom.xml" rel="self"/>
+  <link href="http://benaugarten.com/"/>
+  <updated>2013-01-30T21:10:16-08:00</updated>
+  <id>http://benaugarten.com/</id>
   <author>
     <name><![CDATA[Ben Augarten]]></name>
     <email><![CDATA[baugarten@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[default behavior]]></title>
-    <link href="http://blog.heartbeat.mc/blog/2012/07/02/default-behavior/"/>
+    <link href="http://benaugarten.com/blog/2012/07/02/default-behavior/"/>
     <updated>2012-07-02T20:25:00-07:00</updated>
-    <id>http://blog.heartbeat.mc/blog/2012/07/02/default-behavior</id>
+    <id>http://benaugarten.com/blog/2012/07/02/default-behavior</id>
     <content type="html"><![CDATA[<p>Everyone should publish something they wrote on their own -- their own conception, implementation, and product. It is a completely unique, surreal feeling sending your own brainchild out into the world, seeing people use it and finally tear it to shreds. I recently began an internship (and soon will finish), tirelessly writing code that I'll never see again, as a developer or user. I am writing an internal tool, possibly the worst combination of words an undermotivated 19 year old intern could hear.</p>
 
 <!-- more -->

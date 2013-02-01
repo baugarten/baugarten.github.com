@@ -4,7 +4,7 @@
   <title><![CDATA[Codenfreude]]></title>
   <link href="http://benaugarten.com/atom.xml" rel="self"/>
   <link href="http://benaugarten.com/"/>
-  <updated>2013-02-01T11:41:23-08:00</updated>
+  <updated>2013-02-01T11:49:27-08:00</updated>
   <id>http://benaugarten.com/</id>
   <author>
     <name><![CDATA[Ben Augarten]]></name>
@@ -226,17 +226,18 @@ First, lets write a little express boilerplate:</p>
 
 <p>And now we have a whole bunch of validation and routes that were generated!</p>
 
-<p>we have
-GET /note
-GET /note/:id
-POST /note
-PUT /note/:id
-DELETE /note/:id
-GET /user
-GET /user/:id
-POST /user
-PUT /user/:id
-GET /user/:id/notes
+<p>we have</p>
+
+<p>GET /note<br/>
+GET /note/:id<br/>
+POST /note<br/>
+PUT /note/:id<br/>
+DELETE /note/:id<br/>
+GET /user<br/>
+GET /user/:id<br/>
+POST /user<br/>
+PUT /user/:id<br/>
+GET /user/:id/notes<br/>
 DELETE /user/:id</p>
 
 <p>See! Easy.

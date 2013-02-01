@@ -4,7 +4,7 @@
   <title><![CDATA[Codenfreude]]></title>
   <link href="http://benaugarten.com/atom.xml" rel="self"/>
   <link href="http://benaugarten.com/"/>
-  <updated>2013-02-01T11:39:41-08:00</updated>
+  <updated>2013-02-01T11:41:23-08:00</updated>
   <id>http://benaugarten.com/</id>
   <author>
     <name><![CDATA[Ben Augarten]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<p>I&#8217;m going to introduce to you how to quickly make a REST API using a library I just built call <a href="https://github.com/baugarten/node-restful">Restful</a>. Restful, inspired by Tastypie for Django, generates API endpoints to perform CRUD operations on <a href="https://github.com/LearnBoost/mongoose">Mongoose</a> models. Restful integrates in <a href="https://github.com/visionmedia/express">Express</a> applications. Right now, the only return type is JSON but I plan on adding support for HTML responses and possibly others.</p>
 
 <p>I’m going to walk you through how to make a REST API for two models, Users and Notes.</p>
+
+<!-- more -->
+
 
 <p>Before we start, you need to install <code>express</code> and <code>node-restful</code>. I will assume you already have mongodb installed</p>
 

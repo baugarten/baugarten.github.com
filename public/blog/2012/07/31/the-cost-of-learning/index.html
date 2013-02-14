@@ -3,11 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>default behavior - Codenfreude</title>
+	<title>the cost of learning - Codenfreude</title>
 	<meta name="author" content="Ben Augarten">
 
 	
-	<meta name="description" content="Everyone should publish something they wrote on their own &#8211; their own conception, implementation, and product. It is a completely unique, &hellip;">
+	<meta name="description" content="It is hard to say when a problem warrants the extra effort of learning a new technology or framework or library. While learning a new technology can &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -17,7 +17,7 @@
 
 	<link href="/atom.xml" rel="alternate" title="Codenfreude" type="application/atom+xml">
 	
-	<link rel="canonical" href="http://benaugarten.com/blog/2012/07/02/default-behavior/">
+	<link rel="canonical" href="http://benaugarten.com/blog/2012/07/31/the-cost-of-learning/">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -91,17 +91,22 @@
 			
 			<div class="mid-col-container">
 				<div id="content" class="inner"><article class="post">
-	<h1 class="title">Default Behavior</h1>
-	<div class="entry-content"><p>Everyone should publish something they wrote on their own &#8211; their own conception, implementation, and product. It is a completely unique, surreal feeling sending your own brainchild out into the world, seeing people use it and finally tear it to shreds. I recently began an internship (and soon will finish), tirelessly writing code that I&#8217;ll never see again, as a developer or user. I am writing an internal tool, possibly the worst combination of words an undermotivated 19 year old intern could hear.</p>
+	<h1 class="title">The Cost of Learning</h1>
+	<div class="entry-content"><p>It is hard to say when a problem warrants the extra effort of learning a new technology or framework or library. While learning a new technology can dramatically increase productivity, a shotgun approach with no direction can lead to a false sense of accomplishment and stall real progress. At the same time, accepting broken and old technologies can lead to reinventing the wheel or horribly unmaintainable code.</p>
 
-<!-- more -->
+<p>There exists a spectrum in programmers, the extremes being those that learn all the new technology and those that only master a few technologies, ignoring new ones, on which every one of us falls. Either one becomes stuck using outdated tools (I’m a QBASIC pro!) or constantly keeping up with the edge of new technology, all too eager to fall forward into the abyss. Of course there exists a happy medium somewhere along the spectrum, which is sometimes unclear.</p>
 
+<p>When developing a project in a timely manner, I would like to propose that the happy medium is learning on demand. Sure, reading hacker news articles is fine in your free time, but an in depth evaluation of new technologies should be learned on demand in the context of a real project &#8211; not in a contrived instance, but when a project you work on necessitates the use of a tool you’ve heard about, then learn it. At the same time, don’t be afraid of learning it because it will ideally make your code simpler, more maintainable and DRYer. Plus, if you don’t learn and use it, you’ll regret it and have to rewrite it soon enough.</p>
 
-<p>I lazily submit chunks of code, waving goodbye as they disappear into the abyss of &#8216;production.&#8217; I&#8217;ll never look at them again, and I&#8217;m sure no one else will either. Whatever I wrote will forever live in a zombie state, it will never die, on the off chance it bites back, but it will never really live and serve its purpose either (I&#8217;ll leave before its done), much like developers that sell out too early. I understand the need for money, but why settle for a full time, 9-5/6/7/8? job when programmers have a unique opportunity to create nearly anything they want with they own computer? Not many professions have the opportunity to take their craft into their home and make something useful for people everywhere.</p>
+<p>Identify the signs that you need to learn something new. If you have code smells, you don’t know where to place certain lines of code, or have tightly coupled, untestable modules, then yeah you need to simplify your code, learn a framework, abstract out a library, take the time to pay off your technical debt.</p>
 
-<p>I talk mostly to college students and recent grads, but I find that people don&#8217;t often evaluate their work experience and excuse their own lack of independence by citing perks and (sometimes falsly construed) perceptions of monetary necessity. Sure, I get it, there are top chefs and free food and espresso machines and rock walls and there&#8217;s someone that wipes them after they go to the bathroom, but at the end of the day, I&#8217;m sure they are just as unsatisfied as I am, wishing they had the energy to work on something they really care about. I hear about people&#8217;s &#8216;side projects&#8217; all the time but what stops their side projects from taking over their lives? I know I can&#8217;t help but let my side projects take over my life. I try to see past the perks, but the walls of my cubicle sometimes block my view.</p>
+<p>Paying off technical debt isn’t as easy as it seems. I’m a hedonist when I program &#8211; I love writing code and seeing changes. This is my biggest problem &#8211; the immediate gratification of ignoring new technology. I accumulate technical debt to achieve tangible results (new UI, functionality, etc) faster, but in the long run my code turns to complete manure.</p>
 
-<p>It seems easy to fall into the trap, especially for a college grad used to cheap vodka and ramen, but nothing stacks up to the amazing feeling of making something that you care about. It doesn&#8217;t even have to be good. People don&#8217;t even have to like it. Hell, people don&#8217;t even have to use it! Don&#8217;t believe me? I recently developed a pretty terrible <a href="https://play.google.com/store/apps/details?id=com.owleyes.moustache&amp;hl=en">android app</a>, its buggy on certain systems (it works on mine, I swear), but I love it! I loved making it and I especially love watching the number of people using it slowly climb to my delight and scouring at the terrible reviews (I&#8217;m on an old api, leave me alone). It is my own. And I swear that I will not settle into a cubicle (again) until I chase down that thrill of self fulfillment, chain myself to it, and, in case of emergency, fail miraculously, believing in what I did &#8211; this should be the default behavior.</p>
+<p>I’ve been working on a client-intensive web app. Started off without a javascript framework &#8211; big mistake. My client side code turned into a complete mess &#8211; I tried to separate it into a loose MVC, but it was too tightly coupled, completely untestable, and everything was hard to track down. I kept developing like nothing was wrong, watching the UI change. Please, don’t be like me. I knew I was wrong, there are tons of javascript frameworks that make code organization and modularity easy, I was just stubborn in my own ways, enjoying rolling my own until I finally got the point where a major refactor was inevitable.</p>
+
+<p>Enter requirejs and Backbone. I had to rewrite everything I did &#8211; it took me all summer to rewrite, but I finally learned that I need not hesitate to learn something new. After all, that’s why I’m writing the app. The point is, my stubborness slowed me down tremendously, don’t be stubborn.</p>
+
+<p>It also goes the other way: if you’re one of those people that rattles off all the latest libraries and frameworks and knows too many languages and has too little time in each one, then maybe settle down and start a project. It’s a fine balance, but when your code starts to smell, learn how to fix it.</p>
 </div>
 
 </article>
@@ -147,8 +152,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://benaugarten.com/blog/2012/07/02/default-behavior/';
-        var disqus_url = 'http://benaugarten.com/blog/2012/07/02/default-behavior/';
+        var disqus_identifier = 'http://benaugarten.com/blog/2012/07/31/the-cost-of-learning/';
+        var disqus_url = 'http://benaugarten.com/blog/2012/07/31/the-cost-of-learning/';
         var disqus_script = 'embed.js';
       
     (function () {

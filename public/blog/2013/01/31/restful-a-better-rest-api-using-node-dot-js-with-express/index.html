@@ -73,6 +73,14 @@
 		
 	</div>
 </nav>
+<h2><a href="#">Personal Projects</a></h2>
+<nav id="main-nav">
+  <ul class="main">
+    <li><a target="_blank" href="https://github.com/baugarten/node-restful">Restful APIs in Node</a></li>
+    <li><a target="_blank" href="http://www.wherecaniwatch.it">Where Can I Watch it</a></li>
+    <li><a target="_blank" href="http://www.heartbeat.mx">Heartbeat</a></li>
+  </ul>
+</nav>
 
 </header>				
 			</div>
@@ -87,6 +95,9 @@
 	<div class="entry-content"><p>I&#8217;m going to introduce to you how to quickly make a REST API using a library I just built call <a href="https://github.com/baugarten/node-restful">Restful</a>. Restful, inspired by Tastypie for Django, generates API endpoints to perform CRUD operations on <a href="https://github.com/LearnBoost/mongoose">Mongoose</a> models. Restful integrates in <a href="https://github.com/visionmedia/express">Express</a> applications. Right now, the only return type is JSON but I plan on adding support for HTML responses and possibly others.</p>
 
 <p>I’m going to walk you through how to make a REST API for two models, Users and Notes.</p>
+
+<!-- more -->
+
 
 <p>Before we start, you need to install <code>express</code> and <code>node-restful</code>. I will assume you already have mongodb installed</p>
 
@@ -289,17 +300,18 @@ First, lets write a little express boilerplate:</p>
 
 <p>And now we have a whole bunch of validation and routes that were generated!</p>
 
-<p>we have
-GET /note
-GET /note/:id
-POST /note
-PUT /note/:id
-DELETE /note/:id
-GET /user
-GET /user/:id
-POST /user
-PUT /user/:id
-GET /user/:id/notes
+<p>we have</p>
+
+<p>GET /note<br/>
+GET /note/:id<br/>
+POST /note<br/>
+PUT /note/:id<br/>
+DELETE /note/:id<br/>
+GET /user<br/>
+GET /user/:id<br/>
+POST /user<br/>
+PUT /user/:id<br/>
+GET /user/:id/notes<br/>
 DELETE /user/:id</p>
 
 <p>See! Easy.
@@ -334,7 +346,7 @@ The <a href="https://github.com/baugarten/node-restful/blob/master/examples/note
     Ben Augarten
 
 
-Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+</footer>
 			<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">

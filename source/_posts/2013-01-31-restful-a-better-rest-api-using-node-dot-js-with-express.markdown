@@ -130,17 +130,18 @@ And the route is registered at the key in the dict, so that above route would be
 And now we have a whole bunch of validation and routes that were generated!
 
 we have
-GET /note
-GET /note/:id
-POST /note
-PUT /note/:id
-DELETE /note/:id
-GET /user
-GET /user/:id
-POST /user
-PUT /user/:id
-GET /user/:id/notes
-DELETE /user/:id
+
+GET /note  
+GET /note/:id  
+POST /note  
+PUT /note/:id  
+DELETE /note/:id  
+GET /user  
+GET /user/:id  
+POST /user  
+PUT /user/:id  
+GET /user/:id/notes  
+DELETE /user/:id  
 
 See! Easy.
 The [full source code](https://github.com/baugarten/node-restful/blob/master/examples/notes.js) is available on github, as is a more [modular approach](https://github.com/baugarten/node-restful/tree/master/examples/notes)

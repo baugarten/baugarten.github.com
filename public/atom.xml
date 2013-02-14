@@ -4,7 +4,7 @@
   <title><![CDATA[Codenfreude]]></title>
   <link href="http://benaugarten.com/atom.xml" rel="self"/>
   <link href="http://benaugarten.com/"/>
-  <updated>2013-02-01T11:39:41-08:00</updated>
+  <updated>2013-02-13T22:12:27-08:00</updated>
   <id>http://benaugarten.com/</id>
   <author>
     <name><![CDATA[Ben Augarten]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<p>I&#8217;m going to introduce to you how to quickly make a REST API using a library I just built call <a href="https://github.com/baugarten/node-restful">Restful</a>. Restful, inspired by Tastypie for Django, generates API endpoints to perform CRUD operations on <a href="https://github.com/LearnBoost/mongoose">Mongoose</a> models. Restful integrates in <a href="https://github.com/visionmedia/express">Express</a> applications. Right now, the only return type is JSON but I plan on adding support for HTML responses and possibly others.</p>
 
 <p>I’m going to walk you through how to make a REST API for two models, Users and Notes.</p>
+
+<!-- more -->
+
 
 <p>Before we start, you need to install <code>express</code> and <code>node-restful</code>. I will assume you already have mongodb installed</p>
 
@@ -223,17 +226,18 @@ First, lets write a little express boilerplate:</p>
 
 <p>And now we have a whole bunch of validation and routes that were generated!</p>
 
-<p>we have
-GET /note
-GET /note/:id
-POST /note
-PUT /note/:id
-DELETE /note/:id
-GET /user
-GET /user/:id
-POST /user
-PUT /user/:id
-GET /user/:id/notes
+<p>we have</p>
+
+<p>GET /note<br/>
+GET /note/:id<br/>
+POST /note<br/>
+PUT /note/:id<br/>
+DELETE /note/:id<br/>
+GET /user<br/>
+GET /user/:id<br/>
+POST /user<br/>
+PUT /user/:id<br/>
+GET /user/:id/notes<br/>
 DELETE /user/:id</p>
 
 <p>See! Easy.
@@ -443,6 +447,29 @@ The <a href="https://github.com/baugarten/node-restful/blob/master/examples/note
 <p>If you&#8217;re still down here, you should follow me on <a href="http://twitter.com/benaugarten">twitter</a></p>
 
 <p>Or maybe you have a job offer? Check out my <a href="http://benaugarten.com/hireme/">resume</a> or send me an <a href="mailto:baugarten@gmail.com">email</a>. I&#8217;m looking for freelance work.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[the cost of learning]]></title>
+    <link href="http://benaugarten.com/blog/2012/07/31/the-cost-of-learning/"/>
+    <updated>2012-07-31T21:42:00-07:00</updated>
+    <id>http://benaugarten.com/blog/2012/07/31/the-cost-of-learning</id>
+    <content type="html"><![CDATA[<p>It is hard to say when a problem warrants the extra effort of learning a new technology or framework or library. While learning a new technology can dramatically increase productivity, a shotgun approach with no direction can lead to a false sense of accomplishment and stall real progress. At the same time, accepting broken and old technologies can lead to reinventing the wheel or horribly unmaintainable code.</p>
+
+<p>There exists a spectrum in programmers, the extremes being those that learn all the new technology and those that only master a few technologies, ignoring new ones, on which every one of us falls. Either one becomes stuck using outdated tools (I’m a QBASIC pro!) or constantly keeping up with the edge of new technology, all too eager to fall forward into the abyss. Of course there exists a happy medium somewhere along the spectrum, which is sometimes unclear.</p>
+
+<p>When developing a project in a timely manner, I would like to propose that the happy medium is learning on demand. Sure, reading hacker news articles is fine in your free time, but an in depth evaluation of new technologies should be learned on demand in the context of a real project &#8211; not in a contrived instance, but when a project you work on necessitates the use of a tool you’ve heard about, then learn it. At the same time, don’t be afraid of learning it because it will ideally make your code simpler, more maintainable and DRYer. Plus, if you don’t learn and use it, you’ll regret it and have to rewrite it soon enough.</p>
+
+<p>Identify the signs that you need to learn something new. If you have code smells, you don’t know where to place certain lines of code, or have tightly coupled, untestable modules, then yeah you need to simplify your code, learn a framework, abstract out a library, take the time to pay off your technical debt.</p>
+
+<p>Paying off technical debt isn’t as easy as it seems. I’m a hedonist when I program &#8211; I love writing code and seeing changes. This is my biggest problem &#8211; the immediate gratification of ignoring new technology. I accumulate technical debt to achieve tangible results (new UI, functionality, etc) faster, but in the long run my code turns to complete manure.</p>
+
+<p>I’ve been working on a client-intensive web app. Started off without a javascript framework &#8211; big mistake. My client side code turned into a complete mess &#8211; I tried to separate it into a loose MVC, but it was too tightly coupled, completely untestable, and everything was hard to track down. I kept developing like nothing was wrong, watching the UI change. Please, don’t be like me. I knew I was wrong, there are tons of javascript frameworks that make code organization and modularity easy, I was just stubborn in my own ways, enjoying rolling my own until I finally got the point where a major refactor was inevitable.</p>
+
+<p>Enter requirejs and Backbone. I had to rewrite everything I did &#8211; it took me all summer to rewrite, but I finally learned that I need not hesitate to learn something new. After all, that’s why I’m writing the app. The point is, my stubborness slowed me down tremendously, don’t be stubborn.</p>
+
+<p>It also goes the other way: if you’re one of those people that rattles off all the latest libraries and frameworks and knows too many languages and has too little time in each one, then maybe settle down and start a project. It’s a fine balance, but when your code starts to smell, learn how to fix it.</p>
 ]]></content>
   </entry>
   

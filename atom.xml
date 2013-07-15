@@ -4,7 +4,7 @@
   <title><![CDATA[Codenfreude]]></title>
   <link href="http://benaugarten.com/atom.xml" rel="self"/>
   <link href="http://benaugarten.com/"/>
-  <updated>2013-07-14T19:01:39-07:00</updated>
+  <updated>2013-07-14T19:08:16-07:00</updated>
   <id>http://benaugarten.com/</id>
   <author>
     <name><![CDATA[Ben Augarten]]></name>
@@ -125,7 +125,7 @@ First, lets write a little express boilerplate:</p>
 </span><span class='line'>    <span class="nx">password_hash</span><span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span>
 </span><span class='line'>  <span class="p">}))</span>
 </span><span class='line'>  <span class="p">.</span><span class="nx">methods</span><span class="p">([</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;put&#39;</span><span class="p">,</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span>
 </span><span class='line'>    <span class="nx">before</span><span class="o">:</span> <span class="nx">hashPassword</span><span class="p">,</span> <span class="c1">// Before we make run the default POST to create a user, we want to hash the password (implementation omitted)</span>
 </span><span class='line'>    <span class="nx">after</span><span class="o">:</span> <span class="nx">sendEmail</span><span class="p">,</span> <span class="c1">// After we register them, we will send them a confirmation email</span>
 </span><span class='line'>  <span class="p">}]);</span>
@@ -179,7 +179,7 @@ First, lets write a little express boilerplate:</p>
 </span><span class='line'>    <span class="nx">body</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span><span class="p">},</span>
 </span><span class='line'>    <span class="nx">creator</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;ObjectId&#39;</span><span class="p">,</span> <span class="nx">ref</span><span class="o">:</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="nx">require</span><span class="o">:</span> <span class="kc">true</span><span class="p">},</span>
 </span><span class='line'>  <span class="p">}))</span>
-</span><span class='line'>  <span class="p">.</span><span class="nx">methods</span><span class="p">([</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="nx">validateUser</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;put&#39;</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="nx">validateUser</span> <span class="p">}]);</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">methods</span><span class="p">([</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="nx">validateUser</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;put&#39;</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="nx">validateUser</span> <span class="p">}]);</span>
 </span><span class='line'>
 </span><span class='line'><span class="nx">Note</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span> <span class="s1">&#39;/note&#39;</span><span class="p">);</span>
 </span></code></pre></td></tr></table></div></figure>

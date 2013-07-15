@@ -25,8 +25,9 @@ First, lets write a little express boilerplate:
 
 ```js index.js
 var express = require('express'),
-    mongoose = require('mongoose'),
-    restful = require('../../');
+    restful = require('node-restful'),
+    mongoose = restful.mongoose
+
 // Make a new Express app
 var app = module.exports = express();
 
@@ -61,18 +62,16 @@ var sendEmail = function(req, res, next) {
   next(); // I'll just pass though
 }
 
-var User = new restful.Model({
-  title: "user",
-  methods: ['get', 'put', 'delete', {
-    type: 'post',
-    before: hashPassword, // Before we make run the default POST to create a user, we want to hash the password (implementation omitted)
-    after: sendEmail, // After we register them, we will send them a confirmation email
-  }],
-  schema: mongoose.Schema({
+var User = restful.model( "users", mongoose.Schema({
     username: 'string',
     password_hash: 'string',
-  }),
-});
+  }))
+  .methods(['get', 'put', 'delete', {
+    method: 'post',
+    before: hashPassword, // Before we make run the default POST to create a user, we want to hash the password (implementation omitted)
+    after: sendEmail, // After we register them, we will send them a confirmation email
+  }]);
+
 User.register(app, '/user'); // Register the user model at the localhost:3000/user
 
 app.listen(3000);
@@ -83,33 +82,33 @@ This registers a new mongoose model called user, makes endpoints for GET, POST, 
 Now lets register Notes:
 
 ```js index.js
-var User = new restful.Model(...);
+var User = restful.model(...);
+
 var validateUser = function(req, res, next) {
   if (!req.body.creator) {
     return next({ status: 400, err: "Notes need a creator" });
   }
-  User.Model.findById(req.body.creator, function(err, model) {
+  // We can use any mongoose method on our User object
+  User.findById(req.body.creator, function(err, model) {
     if (!model) return next(restful.objectNotFound());
     return next();
   });
 }
 
-var Note = new restful.Model({
-  title: "note",
-  methods: ['get', 'delete', { type: 'post', before: validateUser }, { type: 'put', before: validateUser }],
-  schema: mongoose.Schema({
+var Note = restful.model("note", mongoose.Schema({
     title: { type: 'string', required: true},
     body: { type: 'string', required: true},
     creator: { type: 'ObjectId', ref: 'user', require: true},
-  }),
-});
+  }))
+  .methods(['get', 'delete', { method: 'post', before: validateUser }, { method: 'put', before: validateUser }]);
+
 Note.register(app, '/note');
 ```
 
 Now lets add a custom route for users where we can list all of the notes they have created.
 
 ```js index.js
-User.userroute("notes", {
+User.route("notes", {
   handler: function(req, res, next, err, model) { // we get err and model parameters on detail routes (model being the one model that was found)
     Note.Model.find({ creator: model._id }, function(err, list) {
       if (err) return next({ status: 500, err: "Something went wrong" });
@@ -144,5 +143,5 @@ GET /user/:id/notes
 DELETE /user/:id  
 
 See! Easy.
-The [full source code](https://github.com/baugarten/node-restful/blob/master/examples/notes.js) is available on github, as is a more [modular approach](https://github.com/baugarten/node-restful/tree/master/examples/notes)
+The [full source code](https://github.com/baugarten/node-restful/blob/master/examples/notes.js) is available on github!
 

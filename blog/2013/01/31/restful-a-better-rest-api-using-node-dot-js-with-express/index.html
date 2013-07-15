@@ -127,9 +127,11 @@ First, lets write a little express boilerplate:</p>
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
+<span class='line-number'>15</span>
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">),</span>
-</span><span class='line'>    <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mongoose&#39;</span><span class="p">),</span>
-</span><span class='line'>    <span class="nx">restful</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="nx">restful</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;node-restful&#39;</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">restful</span><span class="p">.</span><span class="nx">mongoose</span>
+</span><span class='line'>
 </span><span class='line'><span class="c1">// Make a new Express app</span>
 </span><span class='line'><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
 </span><span class='line'>
@@ -177,8 +179,6 @@ First, lets write a little express boilerplate:</p>
 <span class='line-number'>27</span>
 <span class='line-number'>28</span>
 <span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="c1">//...</span>
 </span><span class='line'><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">methodOverride</span><span class="p">());</span>
 </span><span class='line'>
@@ -195,18 +195,16 @@ First, lets write a little express boilerplate:</p>
 </span><span class='line'>  <span class="nx">next</span><span class="p">();</span> <span class="c1">// I&#39;ll just pass though</span>
 </span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'><span class="kd">var</span> <span class="nx">User</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">restful</span><span class="p">.</span><span class="nx">Model</span><span class="p">({</span>
-</span><span class='line'>  <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="nx">methods</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;put&#39;</span><span class="p">,</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">User</span> <span class="o">=</span> <span class="nx">restful</span><span class="p">.</span><span class="nx">model</span><span class="p">(</span> <span class="s2">&quot;users&quot;</span><span class="p">,</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">Schema</span><span class="p">({</span>
+</span><span class='line'>    <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">password_hash</span><span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span>
+</span><span class='line'>  <span class="p">}))</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">methods</span><span class="p">([</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;put&#39;</span><span class="p">,</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="p">{</span>
 </span><span class='line'>    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span>
 </span><span class='line'>    <span class="nx">before</span><span class="o">:</span> <span class="nx">hashPassword</span><span class="p">,</span> <span class="c1">// Before we make run the default POST to create a user, we want to hash the password (implementation omitted)</span>
 </span><span class='line'>    <span class="nx">after</span><span class="o">:</span> <span class="nx">sendEmail</span><span class="p">,</span> <span class="c1">// After we register them, we will send them a confirmation email</span>
-</span><span class='line'>  <span class="p">}],</span>
-</span><span class='line'>  <span class="nx">schema</span><span class="o">:</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">Schema</span><span class="p">({</span>
-</span><span class='line'>    <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span>
-</span><span class='line'>    <span class="nx">password_hash</span><span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span>
-</span><span class='line'>  <span class="p">}),</span>
-</span><span class='line'><span class="p">});</span>
+</span><span class='line'>  <span class="p">}]);</span>
+</span><span class='line'>
 </span><span class='line'><span class="nx">User</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span> <span class="s1">&#39;/user&#39;</span><span class="p">);</span> <span class="c1">// Register the user model at the localhost:3000/user</span>
 </span><span class='line'>
 </span><span class='line'><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
@@ -238,26 +236,26 @@ First, lets write a little express boilerplate:</p>
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">User</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">restful</span><span class="p">.</span><span class="nx">Model</span><span class="p">(...);</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">User</span> <span class="o">=</span> <span class="nx">restful</span><span class="p">.</span><span class="nx">model</span><span class="p">(...);</span>
+</span><span class='line'>
 </span><span class='line'><span class="kd">var</span> <span class="nx">validateUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
 </span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">creator</span><span class="p">)</span> <span class="p">{</span>
 </span><span class='line'>    <span class="k">return</span> <span class="nx">next</span><span class="p">({</span> <span class="nx">status</span><span class="o">:</span> <span class="mi">400</span><span class="p">,</span> <span class="nx">err</span><span class="o">:</span> <span class="s2">&quot;Notes need a creator&quot;</span> <span class="p">});</span>
 </span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="nx">User</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">findById</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">creator</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">model</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// We can use any mongoose method on our User object</span>
+</span><span class='line'>  <span class="nx">User</span><span class="p">.</span><span class="nx">findById</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">creator</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">model</span><span class="p">)</span> <span class="p">{</span>
 </span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">model</span><span class="p">)</span> <span class="k">return</span> <span class="nx">next</span><span class="p">(</span><span class="nx">restful</span><span class="p">.</span><span class="nx">objectNotFound</span><span class="p">());</span>
 </span><span class='line'>    <span class="k">return</span> <span class="nx">next</span><span class="p">();</span>
 </span><span class='line'>  <span class="p">});</span>
 </span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'><span class="kd">var</span> <span class="nx">Note</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">restful</span><span class="p">.</span><span class="nx">Model</span><span class="p">({</span>
-</span><span class='line'>  <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;note&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="nx">methods</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="nx">validateUser</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;put&#39;</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="nx">validateUser</span> <span class="p">}],</span>
-</span><span class='line'>  <span class="nx">schema</span><span class="o">:</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">Schema</span><span class="p">({</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">Note</span> <span class="o">=</span> <span class="nx">restful</span><span class="p">.</span><span class="nx">model</span><span class="p">(</span><span class="s2">&quot;note&quot;</span><span class="p">,</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">Schema</span><span class="p">({</span>
 </span><span class='line'>    <span class="nx">title</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span><span class="p">},</span>
 </span><span class='line'>    <span class="nx">body</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span><span class="p">},</span>
 </span><span class='line'>    <span class="nx">creator</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;ObjectId&#39;</span><span class="p">,</span> <span class="nx">ref</span><span class="o">:</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="nx">require</span><span class="o">:</span> <span class="kc">true</span><span class="p">},</span>
-</span><span class='line'>  <span class="p">}),</span>
-</span><span class='line'><span class="p">});</span>
+</span><span class='line'>  <span class="p">}))</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">methods</span><span class="p">([</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="nx">validateUser</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;put&#39;</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="nx">validateUser</span> <span class="p">}]);</span>
+</span><span class='line'>
 </span><span class='line'><span class="nx">Note</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span> <span class="s1">&#39;/note&#39;</span><span class="p">);</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -279,7 +277,7 @@ First, lets write a little express boilerplate:</p>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">User</span><span class="p">.</span><span class="nx">userroute</span><span class="p">(</span><span class="s2">&quot;notes&quot;</span><span class="p">,</span> <span class="p">{</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">User</span><span class="p">.</span><span class="nx">route</span><span class="p">(</span><span class="s2">&quot;notes&quot;</span><span class="p">,</span> <span class="p">{</span>
 </span><span class='line'>  <span class="nx">handler</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">,</span> <span class="nx">err</span><span class="p">,</span> <span class="nx">model</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// we get err and model parameters on detail routes (model being the one model that was found)</span>
 </span><span class='line'>    <span class="nx">Note</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span> <span class="nx">creator</span><span class="o">:</span> <span class="nx">model</span><span class="p">.</span><span class="nx">_id</span> <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
 </span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">return</span> <span class="nx">next</span><span class="p">({</span> <span class="nx">status</span><span class="o">:</span> <span class="mi">500</span><span class="p">,</span> <span class="nx">err</span><span class="o">:</span> <span class="s2">&quot;Something went wrong&quot;</span> <span class="p">});</span>
@@ -316,7 +314,7 @@ GET /user/:id/notes<br/>
 DELETE /user/:id</p>
 
 <p>See! Easy.
-The <a href="https://github.com/baugarten/node-restful/blob/master/examples/notes.js">full source code</a> is available on github, as is a more <a href="https://github.com/baugarten/node-restful/tree/master/examples/notes">modular approach</a></p>
+The <a href="https://github.com/baugarten/node-restful/blob/master/examples/notes.js">full source code</a> is available on github!</p>
 </div>
 
 </article>
